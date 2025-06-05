@@ -15,6 +15,16 @@ if uploaded_files:
     for file in uploaded_files:
         try:
             df = pd.read_csv(file, sep=';', encoding='latin1', engine='python')
+            st.write(f"✅ Colonnes dans le fichier {file.name} :", df.columns.tolist())
+
+            chantier_col = "LibellÃ© chantier/ss-section"
+            nom_col = "Nom du personnel"
+            prenom_col = "PrÃ©nom Du personnel"
+            heures_col = "Nombre d'heures du type d'heure"
+            montant_col = "Montant des heures valorisÃ©s du type d'heure"
+            date_col = "Date de pointage"
+            gba_col = "Rubrique GBA"
+            agence_col = "LibellÃ© agence du personnel"
 
             df = df[df[chantier_col].astype(str).str.contains("EOLE", case=False, na=False)]
 
@@ -65,7 +75,7 @@ if uploaded_files:
 
         col1, col2 = st.columns(2)
 
-        # 🥧 Camembert - Heures par agence
+        # Camembert - Heures par agence
         with col1:
             heures_agence = df_final.groupby(agence_col)["Heures"].sum().reset_index()
             fig1 = px.pie(heures_agence, names=agence_col, values="Heures", title="Répartition des heures par agence")
