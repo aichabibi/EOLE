@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from datetime import datetime
 
 st.set_page_config(page_title="Analyse EOLE Avancée", layout="wide")
-st.title("Analyse des heures & budgets EOLE")
+st.title("Analyse EOLE")
 
 uploaded_files = st.file_uploader("Importez vos fichiers CSV de pointages", type="csv", accept_multiple_files=True)
 
