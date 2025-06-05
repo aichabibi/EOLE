@@ -15,7 +15,6 @@ if uploaded_files:
     for file in uploaded_files:
         try:
             df = pd.read_csv(file, sep=';', encoding='latin1', engine='python')
-            st.write(f"✅ Colonnes dans le fichier {file.name} :", df.columns.tolist())
 
             chantier_col = "LibellÃ© chantier/ss-section"
             nom_col = "Nom du personnel"
