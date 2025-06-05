@@ -15,7 +15,6 @@ if uploaded_files:
     for file in uploaded_files:
         try:
             df = pd.read_csv(file, sep=';', encoding='latin1', engine='python')
-
             chantier_col = "LibellÃ© chantier/ss-section"
             nom_col = "Nom du personnel"
             prenom_col = "PrÃ©nom Du personnel"
