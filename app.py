@@ -34,7 +34,7 @@ if uploaded_files:
             all_data.append(df[["Nom complet", "Heures", "Montant", "Date", gba_col, agence_col]])
 
         except Exception as e:
-            st.error(f"❌ Erreur dans le fichier {file.name} : {e}")
+            st.error(f"Erreur dans le fichier {file.name} : {e}")
 
     if all_data:
         df_final = pd.concat(all_data).dropna(subset=["Date"])
